@@ -1,11 +1,11 @@
+import User from '../components/user';
 const Users = ({users}) => {
   return (
     <div>
       {
         users.map(user => (
           <div key={user.id}>
-            <h1>{user.name}</h1>
-            <p>{user.email}</p>
+            <User user={user} />
           </div>
         ))
       }

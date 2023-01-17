@@ -9,7 +9,7 @@ const home = () => {
       </Link>
 
       <Link href='/product'>
-       Product
+Product
       </Link>
     </div>
   );
