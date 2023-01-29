@@ -10,12 +10,12 @@ const Post = ({post}) => {
 export default Post;
 
 export async function getStaticProps(context) {
-  console.log(context)
+  //console.log(context)
   const {params} = context;
   const {postId} = params;
   const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
   const data = await response.json();
-  console.log(data);
+  //console.log(data);
   return {
     props: {
       post: data
