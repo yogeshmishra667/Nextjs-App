@@ -1,5 +1,5 @@
 const ArticleByCategory = ({ news, category }) => {
-  console.log(news);
+  //console.log(news);
   return (
     <div>
       <h1>This is the dynamic Page for Category: {category}</h1>
@@ -21,7 +21,10 @@ const ArticleByCategory = ({ news, category }) => {
 export default ArticleByCategory;
 
 export const getServerSideProps = async (context) => {
-  const { params } = context;
+  const { params, req, res, query } = context;
+  console.log(query);
+  console.log(req.headers.cookie);
+  res.setHeader('Set-Cookie', ['name=Yogesh', 'age=23']);
   const { category } = params;
   const response = await fetch(`http://localhost:3000/news?category=${category}`);
   const data = await response.json();
